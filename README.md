@@ -27,6 +27,14 @@ Para validar, selecciono los valores del IBEX del 01/01/2025 al 11/04/2025, y el
 # Conexión a gradio
 A través de gradio el usuario puede subir un CSV de valores, y la salida del modelo es la predicción.
 La mejora sería calcular los predecir a 1 semana los valores esperados, y obtener de servicios las cotizaciones y preguntarle al usuario simplemente el número de días de predicción!. 
+# Versión 2
+Se ha obtenido la librería de yahoo finance para obtener los ultimos 30 valores del IBEX35. https://yfinance-python.org/
+
+Nueva idea de utiliza una técnica de análisis ARIMA https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average. 
+
+Las librerías de python incluyen el arima, con lo cual, solo hay que entrenar el modelo con los valores del IBEX que elija el usuario. En este caso entreno el modelo ARIMA con los valores del ibex desde el 1 de enero 2025 al 11 de abril de 2025. 
+
+En la aplicación de gradio, permito que el usuario introduzca el número de días a predecir. La aplicación gradio obtiene las 30 ultimos valores de IBEX35 y los da como entrada al modelo entrenado ARIMA con anterioridad. 
 
 # Extra - N8N
 AL ser más mi especialización, he montado un sistema de N8N para procesar los emails de gmail en 2 etapas. El núcleo de esta práctica es la ingeniería de prompt y el tener un hardware lo más potente posible para ejecutar un modelo capaz. 
